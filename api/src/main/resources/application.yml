@@ -1,0 +1,29 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:15432/book-api-db
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+    initialization-mode: always
+    continue-on-error: true
+
+#  mvc:
+#    pathmatch:
+#      matching-strategy: ANT_PATH_MATCHER
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+#springdoc:
+#  swagger-ui:
+#    path: /swagger-ui.html
+
+springdoc:
+  version: '@springdoc.version@'
+  swagger-ui:
+    display-request-duration: true
+    groups-order: DESC
+    operationsSorter: method
+    disable-swagger-default-url: true
+    use-root-path: true
+    path: /docs

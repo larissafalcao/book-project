@@ -12,7 +12,7 @@
 	<artifactId>book-project</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>book-project</name>
-	<description>Booj Project</description>
+	<description>Book Project</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>

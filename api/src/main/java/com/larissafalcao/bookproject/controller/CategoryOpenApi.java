@@ -1,13 +1,14 @@
 package com.larissafalcao.bookproject.controller;
 
-import com.larissafalcao.bookproject.dto.BookDTO;
-import com.larissafalcao.bookproject.dto.BookRequest;
+
+import com.larissafalcao.bookproject.domain.Book;
+import com.larissafalcao.bookproject.domain.Category;
+import com.larissafalcao.bookproject.dto.CategoryDTO;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 
@@ -20,9 +21,7 @@ import java.util.List;
         @ApiResponse(responseCode = "404", description = "Resource not found."),
         @ApiResponse(responseCode = "500", description = "Internal server error.")
 })
-public interface BookOpenApi {
-    @Operation(summary = "Get all books")
-    ResponseEntity<List<BookDTO>> getAllBooks();
-    @Operation(summary = "Create book")
-    ResponseEntity<String> saveBook(@RequestBody BookRequest bookRequest);
+public interface CategoryOpenApi {
+    @Operation(summary = "Get all categories")
+    ResponseEntity<List<CategoryDTO>> getAllCategories();
 }

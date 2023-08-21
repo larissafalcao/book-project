@@ -3,6 +3,7 @@ package com.larissafalcao.bookproject.domain;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.*;
+import org.springframework.data.annotation.CreatedDate;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -29,14 +30,14 @@ public class Book {
     @JsonBackReference
     private Category category;
 
-    @ManyToMany
+    @ManyToMany(cascade=CascadeType.PERSIST)
     @JoinColumn(name="id_author")
     @JoinTable(
             name = "book_author",
-            joinColumns = @JoinColumn(name = "author_id"),
-            inverseJoinColumns = @JoinColumn(name = "book_id"))
-    @JsonBackReference
+            joinColumns = @JoinColumn(name = "author_id"))
+//    @JsonBackReference
     private List<Author> authors;
+    @CreatedDate
     private LocalDateTime creationDateTime;
 
 }
