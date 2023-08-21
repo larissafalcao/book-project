@@ -1,25 +1,30 @@
-# Read Me First
-The following was discovered as part of building this project:
+# Book API
+This project is an API manage books.
 
-* The original package name 'com.larissafalcao.book-project' is invalid and this project uses 'com.larissafalcao.bookproject' instead.
+### Requires ###
+* Java 17
+* Docker - https://docs.docker.com/install/
+* Docker compose - https://docs.docker.com/compose/install/
+* Maven - https://maven.apache.org/download.cgi
 
-# Getting Started
+## Execute docker-compose for local environment
+The docker-compose file its located at the project root.
+```sh
+docker-compose up -d
+```
+This command it's going to start:
+- Postgres server.
 
-### Reference Documentation
-For further reference, please consider the following sections:
+### Start application server from code by maven ###
+```sh
+mvn spring-boot:run
+```
 
-* [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
-* [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/3.1.2/maven-plugin/reference/html/)
-* [Create an OCI image](https://docs.spring.io/spring-boot/docs/3.1.2/maven-plugin/reference/html/#build-image)
-* [Spring Boot DevTools](https://docs.spring.io/spring-boot/docs/3.1.2/reference/htmlsingle/index.html#using.devtools)
-* [Spring Web](https://docs.spring.io/spring-boot/docs/3.1.2/reference/htmlsingle/index.html#web)
-* [Spring Data JPA](https://docs.spring.io/spring-boot/docs/3.1.2/reference/htmlsingle/index.html#data.sql.jpa-and-spring-data)
+After the application started access the url:
+```sh
+http://localhost:8080/swagger-ui/index.html#
+```
+You should see the swagger documentation
 
-### Guides
-The following guides illustrate how to use some features concretely:
-
-* [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
-* [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
-* [Building REST services with Spring](https://spring.io/guides/tutorials/rest/)
-* [Accessing Data with JPA](https://spring.io/guides/gs/accessing-data-jpa/)
-
+### Tests ###
+To run test open the file AppControllerTest in src/test/java/com.larissafalcao.bookproject

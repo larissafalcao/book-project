@@ -1,0 +1,11 @@
+version: '3.3'
+
+services:
+  postgres-book-project:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_DB: "book-api-db"
+      POSTGRES_PASSWORD: "postgres"
+    ports:
+      - "15432:5432"
