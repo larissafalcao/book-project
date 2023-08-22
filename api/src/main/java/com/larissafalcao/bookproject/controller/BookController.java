@@ -17,6 +17,7 @@ import java.util.Optional;
 
 @AllArgsConstructor
 @Log4j2
+@CrossOrigin(origins = "http://127.0.0.1:5173", maxAge = 3600)
 @RestController
 @RequestMapping("/api/book")
 public class BookController implements BookOpenApi{
